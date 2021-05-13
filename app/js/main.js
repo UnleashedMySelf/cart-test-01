@@ -58,11 +58,8 @@ const subTotal = () => {
             if (targetItem.value <= 0) {
                 targetItem.value = 1
             }
-            //itemPrice.forEach(itemPr => {
-            //    target.itemPr = '$ ' + Number(targetItem.value) * Number(targetItem.dataset.price);
-            //})
-            console.log(targetItem);
-            //targetItem.itemPrice = '$ ' + Number(targetItem.value) * Number(targetItem.dataset.price);
+            const setSubtotalPrice = targetItem.closest("div").getElementsByClassName("cart__item-price")[0];
+            setSubtotalPrice.textContent = '$' + Number(targetItem.value) * Number(targetItem.dataset.price);
             main();
             e.preventDefault();
         })

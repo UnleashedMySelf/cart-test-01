@@ -189,7 +189,6 @@ h2 {
 
 .cart__item-price {
     font-weight: bold;
-    width: 100px;
     text-align: right;
     margin-left: auto;
     font-size: 24px;
@@ -348,9 +347,6 @@ h2 {
     z-index: 2;
     cursor: pointer;
 }
-.cart__item-price {
-    padding-left: 10px;
-}
 
 .cart-empty {
     width: 710px;
@@ -470,7 +466,7 @@ h2 {
     }
     .cart__item-price {
         font-size: 20px;
-        width: 50px;
+        min-width: 50px;
     }
     .cart__shipping-unlock p {
         font-size: 10px;
