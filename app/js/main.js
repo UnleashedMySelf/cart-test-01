@@ -12,6 +12,7 @@ const itemPrice = document.querySelectorAll('.cart__item-price');
 const inputValue = (input) => Number(input.value) * Number(input.dataset.price);
 let countOfItems = document.querySelector('.cart-indicator');
 const btnQty = document.getElementById('cartItems');
+const btnDeleteItem = document.querySelectorAll('.btn__cart-item-close')
 console.log(btnQty);
 
 const main = () => {
@@ -85,7 +86,7 @@ toggleCart.addEventListener('click', () => {
 
 
 
-/* // Цикл обработки удаления товаров по кнопке "удалить"
+/// Цикл обработки удаления товаров по кнопке "удалить"
 btnDeleteItem.forEach(btnDel => {
     btnDel.addEventListener('click', () => {
         const indexItem = productItemList.indexOf(btnDel.parentElement)
@@ -95,4 +96,4 @@ btnDeleteItem.forEach(btnDel => {
         main()
         subTotal()  
     })
-}) */
+}) 
