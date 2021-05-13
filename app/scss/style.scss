@@ -351,6 +351,10 @@ h2 {
 .cart-empty {
     width: 710px;
 }
+.cart__items-empty {
+    overflow-y: hidden;
+    height: auto;
+}
 
 .cart__text-empty {
     font-size: 18px;
@@ -482,7 +486,7 @@ h2 {
     }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 800px) {
     .cart__items-empty-img {
         margin-top: 20px;
     }

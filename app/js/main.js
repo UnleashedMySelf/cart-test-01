@@ -38,7 +38,8 @@ const main = () => {
         document.querySelector('.cart__items-empty-img').classList.remove('hidden');
         document.querySelector('.cart__text-empty').classList.remove('hidden');
         document.querySelector('.btn__cart-empty').classList.remove('hidden');
-        allItems.style.height = 'auto';
+        allItems.classList.add('cart__items-empty')
+        
     }
     else {
         document.querySelector('.cart__items-empty-img').classList.add('hidden');
