@@ -115,7 +115,7 @@ h2 {
     &::before {
         content: '';
         position: absolute;
-        width: 90%;
+        width: 85%;
         top: -3px;
         height: 3px;
         background-color: $gray;
@@ -310,8 +310,14 @@ h2 {
     z-index: 3;
     top: -10px;
     right: 3px;
+    color: $pink;
+    font-weight: bold;
+    width: 60px;
+    height: auto;
+    font-size: 20px;
+    line-height: 100%;
     &::after, &::before {
-        background-color: $black;
+        content: none;
     }
     
 }
@@ -437,6 +443,9 @@ h2 {
             }
         }
     }
+    .cart__item::before {
+        width: 80%;
+    }
     .cart__item-title {
         max-width: 190px;
     }
@@ -452,7 +461,9 @@ h2 {
         right: 20px;
     }
     .btn__cart-item-close {
-        right: 3px;
+        font-size: 16px;
+        width: 50px;
+        right: 0;
     }
     .cart__item-input-qty, .cart__item-qty-plus, .cart__item-qty-minus, .cart__item-qty span {
         font-size: 16px;
