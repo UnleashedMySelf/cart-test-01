@@ -5,14 +5,14 @@ const hideCartOverlay = document.querySelector('.cart-overlay');
 
 const shippingCost = 0;
 
-const allItems = document.querySelector('.cart__items')
+const allItems = document.querySelector('.cart__items');
 const productItemList = [...document.querySelectorAll('.cart__item')];
 const countChange = document.querySelectorAll('.cart__item-input-qty');
 const itemPrice = document.querySelectorAll('.cart__item-price');
 const inputValue = (input) => Number(input.value) * Number(input.dataset.price);
 let countOfItems = document.querySelector('.cart-indicator');
 const btnQty = document.getElementById('cartItems');
-const btnDeleteItem = document.querySelectorAll('.btn__cart-item-close')
+const btnDeleteItem = document.querySelectorAll('.btn__cart-item-close');
 console.log(btnQty);
 
 const main = () => {
@@ -58,7 +58,7 @@ const subTotal = () => {
             if (targetItem.value <= 0) {
                 targetItem.value = 1
             }
-            const setSubtotalPrice = targetItem.closest("div").getElementsByClassName("cart__item-price")[0];
+            const setSubtotalPrice = targetItem.closest('div').getElementsByClassName('cart__item-price')[0];
             setSubtotalPrice.textContent = '$' + Number(targetItem.value) * Number(targetItem.dataset.price);
             main();
             e.preventDefault();
@@ -70,22 +70,24 @@ subTotal();
 
 btnQty.addEventListener('click', (e) => {
     if(e.target.classList.contains('cart__item-qty-minus')) {
-        //calculatedItems {
-         //   e.target.closet('.cart__items'),
-           // 'minus'
-        //}
-        console.log('-');
+        const inputCurrent = e.target.closest("div").getElementsByClassName('cart__item-input-qty')[0];
+        inputCurrent.value <= 1 ? inputCurrent.value = 1 : inputCurrent.value--;
+        const setSubtotalPrice = e.target.closest("div").getElementsByClassName('cart__item-price')[0];
+        setSubtotalPrice.textContent = '$' + Number(inputCurrent.value) * Number(inputCurrent.dataset.price);
+        main();
+        subTotal();
     }
     if(e.target.classList.contains('cart__item-qty-plus')) {
-        //calculatedItems {
-         //   e.target.closet('.cart__items'),
-           // 'minus'
-        //}
-        console.log('+');
+        const inputCurrent = e.target.closest("div").getElementsByClassName('cart__item-input-qty')[0];
+        inputCurrent.value++;
+        const setSubtotalPrice = e.target.closest("div").getElementsByClassName('cart__item-price')[0];
+        setSubtotalPrice.textContent = '$' + Number(inputCurrent.value) * Number(inputCurrent.dataset.price);
+        main();
+        subTotal();
     }
 })
 
-
+// Show-hide cart
 hideCartOverlay.addEventListener('click', () => {
     cart.classList.remove('cart-visible');
     hideCartOverlay.classList.remove('hide-cart-overlay');
@@ -101,14 +103,14 @@ toggleCart.addEventListener('click', () => {
 
 
 
-/// Цикл обработки удаления товаров по кнопке "удалить"
+// Цикл обработки удаления товаров по кнопке "удалить"
 btnDeleteItem.forEach(btnDel => {
     btnDel.addEventListener('click', () => {
-        const indexItem = productItemList.indexOf(btnDel.parentElement)
+        const indexItem = productItemList.indexOf(btnDel.parentElement);
         console.log(productItemList[indexItem]);
-        productItemList[indexItem].remove()
-        productItemList.splice(indexItem, 1)
-        main()
-        subTotal()  
+        productItemList[indexItem].remove();
+        productItemList.splice(indexItem, 1);
+        main();
+        subTotal();
     })
 }) 
