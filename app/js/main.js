@@ -28,6 +28,24 @@ const main = () => {
     }
     totalPrice += shippingCost;
     countOfItems.textContent = '(' + productItemList.length + ')';
+    countOfItems.dataset.indicator = productItemList.length;
+
+    if (countOfItems.dataset.indicator == 0) {
+        cart.classList.add('cart-empty');
+        countOfItems.textContent = '';
+        document.querySelector('.cart__shipping-unlock').classList.add('hidden');
+        document.querySelector('.cart__checkout-total').classList.add('hidden');
+        document.querySelector('.cart__items-empty-img').classList.remove('hidden');
+        document.querySelector('.cart__text-empty').classList.remove('hidden');
+        document.querySelector('.btn__cart-empty').classList.remove('hidden');
+        allItems.style.height = 'auto';
+    }
+    else {
+        document.querySelector('.cart__items-empty-img').classList.add('hidden');
+        document.querySelector('.cart__text-empty').classList.add('hidden');
+        document.querySelector('.btn__cart-empty').classList.add('hidden');
+    }
+
     console.log(countOfItems);
     document.querySelector('.cart__totalcost-amout').textContent = totalPrice;
 } 

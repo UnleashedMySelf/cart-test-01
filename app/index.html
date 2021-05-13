@@ -15,7 +15,7 @@
         <section class="cart">
             <div class="cart__header">
                 <h2 class="cart__header-title">cart</h2>
-                <span class="cart-indicator">(2)</span>
+                <span class="cart-indicator" data-indicator="0">(2)</span>
             </div>
             <button class="btn__cart-close"></button>
            <div class="cart__shipping-unlock">
@@ -128,7 +128,10 @@
                  </div>   
                  <button type="button" class="btn__cart-close btn__cart-item-close">DELETE</button>
             </div>
+            <img src="images/cart-empty-img.png" alt="empty-cart" class="cart__items-empty-img">
            </div>
+            <p class="cart__text-empty">Oh no, your cart is empty!<br>This would look much better filled with treats!</p>
+            <button class="btn__cart btn__cart-empty">continue shopping</button>
            <div class="cart__checkout-total">
             <div class="cart__totalcost">
                 <h3>Total</h3>
