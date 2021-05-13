@@ -100,9 +100,10 @@ h2 {
 .cart__items {
     width: 100%;
     min-height: auto;
-    height: auto;
-    overflow-y: scroll;
+    height: 100%;
+    overflow-y: auto;
     overflow-x: hidden;
+    padding-right: 5px;
 }
 
 .cart__item {
