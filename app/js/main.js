@@ -11,6 +11,8 @@ const countChange = document.querySelectorAll('.cart__item-input-qty');
 const itemPrice = document.querySelectorAll('.cart__item-price');
 const inputValue = (input) => Number(input.value) * Number(input.dataset.price);
 let countOfItems = document.querySelector('.cart-indicator');
+const btnQty = document.getElementById('cartItems');
+console.log(btnQty);
 
 const main = () => {
     let totalPrice = 0;
@@ -26,7 +28,7 @@ const main = () => {
     totalPrice += shippingCost;
     countOfItems.textContent = '(' + productItemList.length + ')';
     console.log(countOfItems);
-    document.querySelector('.cart__totalcost-amout').textContent = '$' + totalPrice;
+    document.querySelector('.cart__totalcost-amout').textContent = totalPrice;
 } 
 main();
 
@@ -50,6 +52,24 @@ const subTotal = () => {
 subTotal();
 
 
+btnQty.addEventListener('click', (e) => {
+    if(e.target.classList.contains('cart__item-qty-minus')) {
+        //calculatedItems {
+         //   e.target.closet('.cart__items'),
+           // 'minus'
+        //}
+        console.log('-');
+    }
+    if(e.target.classList.contains('cart__item-qty-plus')) {
+        //calculatedItems {
+         //   e.target.closet('.cart__items'),
+           // 'minus'
+        //}
+        console.log('+');
+    }
+})
+
+
 hideCartOverlay.addEventListener('click', () => {
     cart.classList.remove('cart-visible');
     hideCartOverlay.classList.remove('hide-cart-overlay');
@@ -62,3 +82,17 @@ toggleCart.addEventListener('click', () => {
     cart.classList.toggle('cart-visible'); 
     hideCartOverlay.classList.add('hide-cart-overlay');
 });
+
+
+
+/* // Цикл обработки удаления товаров по кнопке "удалить"
+btnDeleteItem.forEach(btnDel => {
+    btnDel.addEventListener('click', () => {
+        const indexItem = productItemList.indexOf(btnDel.parentElement)
+        console.log(productItemList[indexItem]);
+        productItemList[indexItem].remove()
+        productItemList.splice(indexItem, 1)
+        main()
+        subTotal()  
+    })
+}) */

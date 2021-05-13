@@ -84,7 +84,7 @@ h2 {
     min-height: 36px;
     height: 36px;
     background-color: $blue;
-    margin: 15px 0 27px;
+    margin: 15px 0 11px;
     p {
         text-transform: uppercase;
         font-weight: bold;
@@ -102,13 +102,23 @@ h2 {
     min-height: auto;
     height: auto;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .cart__item {
     display: flex;
+    position: relative;
     padding: 17px 0 20px;
-    border-top: 3px solid $gray;
     justify-content: space-between;
+    margin-top: 16px;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 90%;
+        top: -3px;
+        height: 3px;
+        background-color: $gray;
+    }
 }
 
 .cart__item-img {
@@ -118,7 +128,7 @@ h2 {
 
 .cart__item-options {
     margin-left: 20px;
-    margin-right: auto;
+    width: 100%;
 }
 
 .cart__item-title {
@@ -180,6 +190,7 @@ h2 {
     font-weight: bold;
     width: 100px;
     text-align: right;
+    margin-left: auto;
     font-size: 24px;
     line-height: 100%;
 }
@@ -215,7 +226,7 @@ h2 {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     padding: 20px 0;
     font-size: 24px;
     border-top: 3px solid $gray;
@@ -254,11 +265,12 @@ h2 {
     font-weight: bold;
     font-size: 40px;
     line-height: 100%;
-    span {
-        font-size: 18px;
-    }
 }
-
+.cart__totalcost-dol {
+    font-size: 18px;
+    margin-left: auto;
+    font-weight: bold;
+}
 .btn__cart-close {
     width: 15px;
     height: 15px;
@@ -291,6 +303,16 @@ h2 {
             transform: rotate(45deg);
         }
     }
+}
+
+.btn__cart-item-close {
+    z-index: 3;
+    top: -10px;
+    right: 3px;
+    &::after, &::before {
+        background-color: $black;
+    }
+    
 }
 
 .cart__checkout-total {
@@ -364,10 +386,9 @@ h2 {
     .cart__shipping-unlock {
         min-height: 32px;
         height: 32px;
-        margin: 4px 0 16px;
+        margin: 4px 0 0;
         
     }
-    
     .cart__item-title {
         font-size: 20px;
     }
@@ -415,6 +436,9 @@ h2 {
             }
         }
     }
+    .cart__item-title {
+        max-width: 190px;
+    }
     .cart__item-descr {
         position: relative;
         left: -97px;
@@ -426,11 +450,15 @@ h2 {
     .btn__cart-close {
         right: 20px;
     }
+    .btn__cart-item-close {
+        right: 3px;
+    }
     .cart__item-input-qty, .cart__item-qty-plus, .cart__item-qty-minus, .cart__item-qty span {
         font-size: 16px;
     }
     .cart__item-price {
         font-size: 20px;
+        width: 50px;
     }
     .cart__shipping-unlock p {
         font-size: 10px;

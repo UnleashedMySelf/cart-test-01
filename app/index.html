@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    
     <header>
-
     </header>
     <main class="main">
         <button class="btn-cart">open cart</button>
@@ -29,34 +27,41 @@
                </div>
                <p>free shipping unlocked</p>
            </div>
-           <div class="cart__items">
+           <div class="cart__items" id="cartItems">
                <div class="cart__item">
                    <img src="images/item-img1.png" alt="item 1" class="cart__item-img">
+                  
                    <div class="cart__item-options">
-                        <h3 class="cart__item-title">Belgian Chocolate Cookie Bars</h3>
+                    <h3 class="cart__item-title">Belgian Chocolate Cookie Bars</h3> 
                         <div class="cart__item-qty">
                             <span>qty</span>
-                            <button class="cart__item-qty-minus">-</button>
+                            <button type="button" class="cart__item-qty-minus">-</button>
                             <input class="cart__item-input-qty" type="number" name="cart-input-qty" value="1" data-price="26" id="input-id1">
-                            <button class="cart__item-qty-plus">+</button>
+                            <button type="button" class="cart__item-qty-plus">+</button>
+                            <div class="cart__item-price">
+                                <p>$26</p>
+                            </div>
                         </div>
                         <div class="cart__item-descr">
                         </div>
                     </div>
-                    <div class="cart__item-price">
-                        <p>$26</p>
-                    </div>
+                    <button type="button" class="btn__cart-close btn__cart-item-close"></button>
+                    
                </div>
+
                <div class="cart__item">
                 <img src="images/item-img2.png" alt="item 1" class="cart__item-img">
                 <div class="cart__item-options">
                      <h3 class="cart__item-title">FROZEN DESSERTS BUNDLE (10)</h3>
                      <div class="cart__item-qty">
                          <span>qty</span>
-                         <button class="cart__item-qty-minus">-</button>
+                         <button type="button" class="cart__item-qty-minus">-</button>
                          <input class="cart__item-input-qty" type="number" name="cart-input-qty" value="1" data-price="100" id="input-id2">
-                         <button class="cart__item-qty-plus">+</button>
-                     </div>
+                         <button type="button" class="cart__item-qty-plus">+</button>
+                         <div class="cart__item-price">
+                            <p>$100</p>
+                        </div>
+                    </div>
                      <div class="cart__item-descr">
                         <ul class="cart__item-descr-par">
                             <li>Cookies & Cream Cheesecake</li>
@@ -69,9 +74,8 @@
                         </ul>
                     </div>
                  </div>
-                 <div class="cart__item-price">
-                     <p>$100</p>
-                 </div>
+                 
+                 <button type="button" class="btn__cart-close btn__cart-item-close"></button>
             </div>
             <div class="cart__item">
                 <img src="images/item-img2.png" alt="item 1" class="cart__item-img">
@@ -79,36 +83,13 @@
                      <h3 class="cart__item-title">FROZEN DESSERTS BUNDLE (10)</h3>
                      <div class="cart__item-qty">
                          <span>qty</span>
-                         <button class="cart__item-qty-minus">-</button>
-                         <input class="cart__item-input-qty" type="number" name="cart-input-qty" value="1" data-price="100" id="input-id2">
-                         <button class="cart__item-qty-plus">+</button>
-                     </div>
-                     <div class="cart__item-descr">
-                        <ul class="cart__item-descr-par">
-                            <li>Cookies & Cream Cheesecake</li>
-                            <li>Dark Chocolate Lava Cake</li>
-                            <li>New York Cheesecake</li>
-                            <li>Dark Chocolate Lava Cake</li>
-                            <li>Cookies & Cream Cheesecake (2)</li>
-                            <li>Dark Chocolate Lava Cake (3)</li>
-                            <li>New York Cheesecake</li>
-                        </ul>
-                    </div>
-                 </div>
-                 <div class="cart__item-price">
-                     <p>$100</p>
-                 </div>
-            </div>
-            <div class="cart__item">
-                <img src="images/item-img2.png" alt="item 1" class="cart__item-img">
-                <div class="cart__item-options">
-                     <h3 class="cart__item-title">FROZEN DESSERTS BUNDLE (10)</h3>
-                     <div class="cart__item-qty">
-                         <span>qty</span>
-                         <button class="cart__item-qty-minus">-</button>
+                         <button type="button" class="cart__item-qty-minus">-</button>
                          <input class="cart__item-input-qty" type="number" name="cart-input-qty" value="1" data-price="100" id="input-id3">
-                         <button class="cart__item-qty-plus">+</button>
-                     </div>
+                         <button type="button" class="cart__item-qty-plus">+</button>
+                         <div class="cart__item-price">
+                            <p>$100</p>
+                        </div>
+                    </div>
                      <div class="cart__item-descr">
                         <ul class="cart__item-descr-par">
                             <li>Cookies & Cream Cheesecake</li>
@@ -121,15 +102,41 @@
                         </ul>
                     </div>
                  </div>
-                 <div class="cart__item-price">
-                     <p>$100</p>
-                 </div>
+                 <button type="button" class="btn__cart-close btn__cart-item-close"></button>
+            </div>
+            <div class="cart__item">
+                <img src="images/item-img2.png" alt="item 1" class="cart__item-img">
+                <div class="cart__item-options">
+                     <h3 class="cart__item-title">FROZEN DESSERTS BUNDLE (10)</h3>
+                     <div class="cart__item-qty">
+                         <span>qty</span>
+                         <button type="button" class="btn-qty cart__item-qty-minus">-</button>
+                         <input class="cart__item-input-qty" type="number" name="cart-input-qty" value="1" data-price="100" id="input-id4">
+                         <button type="button" class="btn-qty cart__item-qty-plus">+</button>
+                         <div class="cart__item-price">
+                            <p>$100</p>
+                        </div>
+                    </div>
+                     <div class="cart__item-descr">
+                        <ul class="cart__item-descr-par">
+                            <li>Cookies & Cream Cheesecake</li>
+                            <li>Dark Chocolate Lava Cake</li>
+                            <li>New York Cheesecake</li>
+                            <li>Dark Chocolate Lava Cake</li>
+                            <li>Cookies & Cream Cheesecake (2)</li>
+                            <li>Dark Chocolate Lava Cake (3)</li>
+                            <li>New York Cheesecake</li>
+                        </ul>
+                    </div>
+                 </div>   
+                 <button type="button" class="btn__cart-close btn__cart-item-close"></button>
             </div>
            </div>
            <div class="cart__checkout-total">
             <div class="cart__totalcost">
                 <h3>Total</h3>
-                <p class="cart__totalcost-amout"><span>$</span>126</p>
+                <span class="cart__totalcost-dol">$</span>
+                <p class="cart__totalcost-amout">126</p>
             </div>
             <button type="submit" class="btn__cart-cht">CHECKOUT</button>
             <p class="cart__manifest-checkout">Shipping, taxes and discounts calculated at checkout</p>
