@@ -188,6 +188,7 @@ h2 {
     border-right: none;
 }
 .cart__item-price-was {
+    display: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -506,6 +507,9 @@ h2 {
     }
     .btn__cart-empty {
         width: 305px;
+    }
+    .cart__item-price-was {
+        display: block;
     }
 }
 
