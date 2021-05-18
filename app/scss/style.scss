@@ -37,7 +37,7 @@ h2 {
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 .main {
@@ -349,7 +349,10 @@ h2 {
 .cart-empty {
     width: 710px;
 }
-
+.cart__items-empty {
+    overflow-y: hidden;
+    height: auto;
+}
 .cart__text-empty {
     font-size: 18px;
     text-align: center;
